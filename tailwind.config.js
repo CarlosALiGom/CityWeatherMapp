@@ -14,6 +14,7 @@ module.exports = {
       "mid-blue": "#C4ECFA",
       "dark-text": "#14143F",
       "light-text": "#595977",
+      "light-red": "#D60000",
     },
     container: {
       center: true,
