@@ -2,13 +2,13 @@ import Location from "@/components/Location/Location";
 import { useEffect, useState } from "react";
 
 export interface UserLocation {
-  latitude: string;
-  longitude: string;
+  latitude: number;
+  longitude: number;
 }
 const AreaSelectorPage = (): React.ReactElement => {
   const [userLocation, setUserLocation] = useState<UserLocation>({
-    latitude: "",
-    longitude: "",
+    latitude: 0,
+    longitude: 0,
   });
 
   useEffect(() => {
@@ -17,8 +17,8 @@ const AreaSelectorPage = (): React.ReactElement => {
         (position) => {
           const { latitude, longitude } = position.coords;
           setUserLocation({
-            latitude: latitude.toString(),
-            longitude: longitude.toString(),
+            latitude: latitude,
+            longitude: longitude,
           });
         },
         (error) => {
@@ -30,11 +30,11 @@ const AreaSelectorPage = (): React.ReactElement => {
     }
   }, []);
 
-  const handleLatitudeChange = (value: string) => {
+  const handleLatitudeChange = (value: number) => {
     setUserLocation({ ...userLocation, latitude: value });
   };
 
-  const handleLongitudeChange = (value: string) => {
+  const handleLongitudeChange = (value: number) => {
     setUserLocation({ ...userLocation, longitude: value });
   };
 
