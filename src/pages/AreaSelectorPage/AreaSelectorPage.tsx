@@ -1,5 +1,5 @@
 import Location from "@/components/Location/Location";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export interface UserLocation {
   latitude: string;
@@ -10,6 +10,25 @@ const AreaSelectorPage = (): React.ReactElement => {
     latitude: "",
     longitude: "",
   });
+
+  useEffect(() => {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          setUserLocation({
+            latitude: latitude.toString(),
+            longitude: longitude.toString(),
+          });
+        },
+        (error) => {
+          console.error("Error obtaining location:", error);
+        }
+      );
+    } else {
+      console.error("Geolocation not available");
+    }
+  }, []);
 
   const handleLatitudeChange = (value: string) => {
     setUserLocation({ ...userLocation, latitude: value });
