@@ -1,11 +1,18 @@
-import { RouteObject, createBrowserRouter } from "react-router-dom";
+import { Navigate, RouteObject, createBrowserRouter } from "react-router-dom";
 import App from "../components/App/App";
+import AreaSelectorPage from "@/pages/AreaSelectorPage/AreaSelectorPage";
 
 const routes: RouteObject[] = [
   {
     path: "/",
     element: <App />,
-    children: [{ path: "/areaSelector", element: <App /> }],
+    children: [
+      {
+        index: true,
+        element: <Navigate to="/areaSelector" replace />,
+      },
+      { path: "/areaSelector", element: <AreaSelectorPage /> },
+    ],
   },
 ];
 
