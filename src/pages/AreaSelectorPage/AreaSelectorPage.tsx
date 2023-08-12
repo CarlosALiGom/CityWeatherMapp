@@ -1,14 +1,26 @@
+import Area from "@/components/Area/Area";
 import Location from "@/components/Location/Location";
 import { useEffect, useState } from "react";
 
-export interface UserLocation {
+export interface LocationStructure {
   latitude: number;
   longitude: number;
 }
+
+export interface UserLocationStructure {
+  userLatitude: number;
+  userLongitude: number;
+}
+
 const AreaSelectorPage = (): React.ReactElement => {
-  const [userLocation, setUserLocation] = useState<UserLocation>({
-    latitude: 0,
-    longitude: 0,
+  const [userLocation, setUserLocation] = useState<UserLocationStructure>({
+    userLatitude: 0,
+    userLongitude: 0,
+  });
+
+  const [location, setLocation] = useState<LocationStructure>({
+    latitude: userLocation.userLatitude,
+    longitude: userLocation.userLongitude,
   });
 
   useEffect(() => {
@@ -17,6 +29,10 @@ const AreaSelectorPage = (): React.ReactElement => {
         (position) => {
           const { latitude, longitude } = position.coords;
           setUserLocation({
+            userLatitude: latitude,
+            userLongitude: longitude,
+          });
+          setLocation({
             latitude: latitude,
             longitude: longitude,
           });
@@ -31,21 +47,22 @@ const AreaSelectorPage = (): React.ReactElement => {
   }, []);
 
   const handleLatitudeChange = (value: number) => {
-    setUserLocation({ ...userLocation, latitude: value });
+    setLocation({ ...location, latitude: value });
   };
 
   const handleLongitudeChange = (value: number) => {
-    setUserLocation({ ...userLocation, longitude: value });
+    setLocation({ ...location, longitude: value });
   };
 
   return (
     <>
       <h1 className="text-xl font-semibold text-dark-text">Area selector</h1>
       <Location
-        userLocation={userLocation}
+        location={location}
         onLatitudeChange={handleLatitudeChange}
         onLongitudeChange={handleLongitudeChange}
       />
+      <Area location={location} userLocation={userLocation} />
     </>
   );
 };
