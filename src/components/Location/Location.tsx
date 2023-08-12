@@ -1,25 +1,24 @@
+import { LocationStructure } from "@/pages/AreaSelectorPage/AreaSelectorPage";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
-import { UserLocation } from "@/pages/AreaSelectorPage/AreaSelectorPage";
 
 interface LocationPropsStructure {
-  userLocation: UserLocation;
+  location: LocationStructure;
   onLatitudeChange: (value: number) => void;
   onLongitudeChange: (value: number) => void;
 }
 const Location = ({
-  userLocation,
+  location,
   onLatitudeChange,
   onLongitudeChange,
 }: LocationPropsStructure): React.ReactElement => {
-  const isValidLatitude =
-    userLocation.latitude >= -90 && userLocation.latitude <= 90;
+  const isValidLatitude = location.latitude >= -90 && location.latitude <= 90;
 
   const isValidLongitude =
-    userLocation.longitude >= -180 && userLocation.longitude <= 180;
+    location.longitude >= -180 && location.longitude <= 180;
 
   return (
-    <div className="mt-2">
+    <div className="mt-4">
       <h2 className="mb-2 text-left text-dark-text font-semibold">Location</h2>
       <div className="flex">
         <div className="flex flex-col gap-1.5">
@@ -27,7 +26,7 @@ const Location = ({
           <Input
             id="latitude"
             type="number"
-            value={userLocation.latitude}
+            value={location.latitude}
             onChange={(event) =>
               onLatitudeChange(parseFloat(event.target.value))
             }
@@ -44,7 +43,7 @@ const Location = ({
           <Input
             id="longitude"
             type="number"
-            value={userLocation.longitude}
+            value={location.longitude}
             onChange={(event) =>
               onLongitudeChange(parseFloat(event.target.value))
             }
