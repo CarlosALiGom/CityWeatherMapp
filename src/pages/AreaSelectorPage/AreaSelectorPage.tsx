@@ -56,7 +56,9 @@ const AreaSelectorPage = (): React.ReactElement => {
 
   return (
     <>
-      <h1 className="text-xl font-semibold text-dark-text">Area selector</h1>
+      <h1 className="text-[21.25px] font-semibold text-dark-text">
+        Area selector
+      </h1>
       <Location
         location={location}
         onLatitudeChange={handleLatitudeChange}
