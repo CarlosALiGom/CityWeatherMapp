@@ -13,16 +13,26 @@ const NavBar = (): React.ReactElement => {
                 <>
                   <div className="flex flex-col items-center gap-2">
                     <img
-                      src="./discActive.svg"
+                      src="./img/discActive.svg"
                       alt="disc icon"
                       width={24}
                       height={24}
                     />
-                    <img src="./elipse.svg" alt="elipse" width={3} height={3} />
+                    <img
+                      src="./img/elipse.svg"
+                      alt="elipse"
+                      width={3}
+                      height={3}
+                    />
                   </div>
                 </>
               ) : (
-                <img src="./disc.svg" alt="disc icon" width={24} height={24} />
+                <img
+                  src="./img/disc.svg"
+                  alt="disc icon"
+                  width={24}
+                  height={24}
+                />
               )}
             </NavLink>
           </li>
@@ -32,16 +42,26 @@ const NavBar = (): React.ReactElement => {
                 <>
                   <div className="flex flex-col items-center gap-2">
                     <img
-                      src="./cloudActive.svg"
+                      src="./img/cloudActive.svg"
                       alt="disc icon"
                       width={24}
                       height={24}
                     />
-                    <img src="./elipse.svg" alt="elipse" width={3} height={3} />
+                    <img
+                      src="./img/elipse.svg"
+                      alt="elipse"
+                      width={3}
+                      height={3}
+                    />
                   </div>
                 </>
               ) : (
-                <img src="./cloud.svg" alt="disc icon" width={24} height={24} />
+                <img
+                  src="./img/cloud.svg"
+                  alt="disc icon"
+                  width={24}
+                  height={24}
+                />
               )}
             </NavLink>
           </li>

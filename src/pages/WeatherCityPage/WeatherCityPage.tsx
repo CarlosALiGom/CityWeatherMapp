@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import useCityWeather from "@/hooks/useCityWeather/useCityWeather";
 import { cityWeatherResponseStructure } from "@/types";
 import { initialWeatherCity } from "@/utils/initialWeatherCity";
-import WeatherConditions from "@/components/WeatherConditions/WeatherConditios";
+import WeatherConditions from "@/components/WeatherConditions/WeatherConditions";
 
 const WeatherCityPage = (): React.ReactElement => {
   const [selectedCity, setSelectedCity] = useState<string>("La Gabarra");
