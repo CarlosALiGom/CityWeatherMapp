@@ -73,7 +73,7 @@ const WeatherConditions = ({
             >
               <div className="flex gap-1">
                 <img
-                  src="./location-point.svg"
+                  src="./img/location-point.svg"
                   alt="location point"
                   width={16}
                   height={16}
