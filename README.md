@@ -1,6 +1,6 @@
-# Universal Plastic Test Web App
+# City Weather Mapp
 
-Welcome to my Universal Plastic Test Web App repository! The app is built using React to ensure a responsive and dynamic user interface, and styled with Tailwind CSS for a modern and intuitive user experience.
+Welcome to my City Weather Mapp repository! The app is built using React to ensure a responsive and dynamic user interface, and styled with Tailwind CSS for a modern and intuitive user experience.
 
 ## Table of Contents
 
@@ -16,7 +16,7 @@ Welcome to my Universal Plastic Test Web App repository! The app is built using 
 
 ## Introduction
 
-This repository contains the Universal Plastic Test Web App, developed as part of the application process for the Front End Developer role at Universal Plastic. The app is designed to demonstrate proficiency in React and Tailwind CSS by implementing two main screens: the Area Selector and Weather City.
+This repository contains my City Weather Mapp Web App. The app is designed to demonstrate proficiency in React and Tailwind CSS by implementing two main screens: the Area Selector and Weather City.
 
 The project involves creating interactive components, integrating with external APIs for weather data, and utilizing mapping libraries to display locations effectively.
 
@@ -26,7 +26,7 @@ This is the original Figma design that served as the foundation for the developm
 
 ## Deployment
 
-The app has been deployed at Netlify and is accessible at: [https://carlos-aliaga-universal-plastic-test.netlify.app](https://carlos-aliaga-universal-plastic-test.netlify.app).
+The app has been deployed at Netlify and is accessible at: [https://carlos-aliaga-city-weather-mapp.netlify.app/](https://carlos-aliaga-city-weather-mapp.netlify.app/).
 
 ## Getting Started
 
@@ -42,13 +42,13 @@ Follow these steps to set up and run the project locally.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/CarlosALiGom/universalPlasticTest
+   git clone https://github.com/CarlosALiGom/CityWeatherMapp
    ```
 
 2. Navigate to the project directory or open it with VScode:
 
    ```bash
-   cd universal-plastic-test
+   cd city-weather-mapp
    ```
 
 3. Install the dependencies:
